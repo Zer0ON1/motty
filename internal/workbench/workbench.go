@@ -721,16 +721,19 @@ type State struct {
 	closeAction    closeAction
 	relaunchAction relaunchAction
 	// The file panel's settings and the folders kept for each host.
-	sftpParallel           int
-	sftpKeepTimesOff       bool
-	sftpFollowOff          bool
-	sftpTerminalFollow     bool
-	sftpPathInput          bool
-	sftpPanelAutoOpen      bool
-	sftpDirectoryTree      bool
-	sftpWindowOrder        sftpWindowOrder
-	sftpOpenMode           sftpOpenMode
-	sftpColumns            sftpColumnPreferences
+	sftpParallel       int
+	sftpKeepTimesOff   bool
+	sftpFollowOff      bool
+	sftpTerminalFollow bool
+	sftpPathInput      bool
+	sftpPanelAutoOpen  bool
+	sftpDirectoryTree  bool
+	sftpWindowOrder    sftpWindowOrder
+	sftpOpenMode       sftpOpenMode
+	sftpColumns        sftpColumnPreferences
+	// sftpTypeIcons is the system icon of each file extension, shared by every
+	// row and every listing. A nil map means none has been asked for yet.
+	sftpTypeIcons          map[string]*fileIconSlot
 	sftpFilesSettings      sftpFilesSettingsCache
 	sftpDownloadDirectory  string
 	defaultEditor          ExternalEditor // hands remote folders to this computer's editor
